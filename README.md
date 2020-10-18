@@ -26,6 +26,7 @@ Example Playbook
 Deploy motd along with Linux distrubution motd
 
 ```yaml
+---
 - hosts: servers
   roles:
     - bashlinux_motd
@@ -33,6 +34,7 @@ Deploy motd along with Linux distrubution motd
 
 Deploy motd with custom banner on sandbox environment and no OS info appended to motd. Assuming the file `custom_banner` exists on the search path.
 ```yaml
+---
 - hosts: servers
   vars:
     motd_env: sandbox
