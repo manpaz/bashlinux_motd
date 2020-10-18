@@ -1,0 +1,10 @@
+---
+- copy:
+    content: ""
+    dest: /etc/motd
+  when: motd_file_empty
+
+- copy:
+    content: "OS:		{{ ansible_distribution }} {{ ansible_distribution_version }}\n"
+    dest: /etc/motd
+  when: not motd_file_empty

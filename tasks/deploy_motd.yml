@@ -1,0 +1,19 @@
+---
+- copy:
+    src: "{{ motd_logo_src }}"
+    dest: /etc/motd-logo
+
+- template:
+    src: "{{ motd_info_src }}"
+    dest: /etc/motd-info
+
+- copy:
+    src: 99-ansible-motd
+    dest: /etc/update-motd.d/99-ansible-motd
+    mode: 0755
+  when: ansible_facts['os_family'] == "Debian"
+
+- copy:
+    src: 99-ansible-motd
+    dest: /etc/profile.d/login-info.sh
+  when: ansible_facts['os_family'] == "RedHat"

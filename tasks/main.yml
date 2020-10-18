@@ -1,0 +1,8 @@
+---
+# tasks file for bashlinux_base
+
+- name: Deploy motd
+  import_tasks: deploy_motd.yml
+
+- name: Set motd file
+  import_tasks: set_motd_file.yml

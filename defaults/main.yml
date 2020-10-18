@@ -1,0 +1,9 @@
+---
+# defaults file for bashlinux_base
+
+# motd
+motd_app: ""
+motd_env: ""
+motd_logo_src: "motd-logo"
+motd_info_src: "motd-info.j2"
+motd_file_empty: false
